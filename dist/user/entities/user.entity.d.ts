@@ -1,10 +1,8 @@
 import { CoreEntity } from 'src/common/core.entity';
 export declare class User extends CoreEntity {
-    no: number;
     name: string;
     permission: string;
     hp: string;
-    created_at: Date;
     last_loged_in: Date;
     birth: string;
     gender: string;

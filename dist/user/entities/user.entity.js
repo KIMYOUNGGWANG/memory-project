@@ -17,11 +17,6 @@ const core_entity_1 = require("../../common/core.entity");
 let User = class User extends core_entity_1.CoreEntity {
 };
 __decorate([
-    typeorm_1.PrimaryGeneratedColumn(),
-    graphql_1.Field(() => Number),
-    __metadata("design:type", Number)
-], User.prototype, "no", void 0);
-__decorate([
     graphql_1.Field(() => String),
     typeorm_1.Column(),
     __metadata("design:type", String)
@@ -36,11 +31,6 @@ __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
 ], User.prototype, "hp", void 0);
-__decorate([
-    graphql_1.Field(() => Date),
-    typeorm_1.Column(),
-    __metadata("design:type", Date)
-], User.prototype, "created_at", void 0);
 __decorate([
     graphql_1.Field(() => Date),
     typeorm_1.Column(),

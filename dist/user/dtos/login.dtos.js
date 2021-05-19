@@ -9,39 +9,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MutationOutput = exports.CoreEntity = void 0;
-const typeorm_1 = require("typeorm");
+exports.LoginOutput = exports.LoginInput = void 0;
 const graphql_1 = require("@nestjs/graphql");
-class CoreEntity {
-}
+const core_entity_1 = require("../../common/core.entity");
+let LoginInput = class LoginInput {
+};
 __decorate([
-    typeorm_1.PrimaryGeneratedColumn(),
+    graphql_1.Field(() => String),
+    __metadata("design:type", String)
+], LoginInput.prototype, "type", void 0);
+__decorate([
     graphql_1.Field(() => Number),
     __metadata("design:type", Number)
-], CoreEntity.prototype, "no", void 0);
-__decorate([
-    typeorm_1.CreateDateColumn(),
-    graphql_1.Field(() => Date),
-    __metadata("design:type", Date)
-], CoreEntity.prototype, "created_at", void 0);
-__decorate([
-    typeorm_1.UpdateDateColumn(),
-    graphql_1.Field(() => Date),
-    __metadata("design:type", Date)
-], CoreEntity.prototype, "updated_at", void 0);
-exports.CoreEntity = CoreEntity;
-let MutationOutput = class MutationOutput {
+], LoginInput.prototype, "idx", void 0);
+LoginInput = __decorate([
+    graphql_1.InputType()
+], LoginInput);
+exports.LoginInput = LoginInput;
+let LoginOutput = class LoginOutput extends core_entity_1.MutationOutput {
 };
 __decorate([
     graphql_1.Field(() => String, { nullable: true }),
     __metadata("design:type", String)
-], MutationOutput.prototype, "error", void 0);
+], LoginOutput.prototype, "accessToken", void 0);
 __decorate([
-    graphql_1.Field(() => Boolean),
-    __metadata("design:type", Boolean)
-], MutationOutput.prototype, "ok", void 0);
-MutationOutput = __decorate([
+    graphql_1.Field(() => String, { nullable: true }),
+    __metadata("design:type", String)
+], LoginOutput.prototype, "refreshToken", void 0);
+LoginOutput = __decorate([
     graphql_1.ObjectType()
-], MutationOutput);
-exports.MutationOutput = MutationOutput;
-//# sourceMappingURL=core.entity.js.map
+], LoginOutput);
+exports.LoginOutput = LoginOutput;
+//# sourceMappingURL=login.dtos.js.map

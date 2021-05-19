@@ -31,7 +31,5 @@ export class CreateUserDto extends OmitType(User, [
   'is_deleted',
   'last_loged_in',
   'created_at',
-  'kakao',
-  'naver',
   'permission',
 ]) {}

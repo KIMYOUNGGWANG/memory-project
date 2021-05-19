@@ -15,8 +15,6 @@ let CreateUserDto = class CreateUserDto extends graphql_1.OmitType(user_entity_1
     'is_deleted',
     'last_loged_in',
     'created_at',
-    'kakao',
-    'naver',
     'permission',
 ]) {
 };

@@ -1,5 +1,5 @@
 import { ObjectType, Field, InputType } from '@nestjs/graphql';
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column } from 'typeorm';
 import { IsOptional } from 'class-validator';
 import { CoreEntity } from 'src/common/core.entity';
 
@@ -7,10 +7,6 @@ import { CoreEntity } from 'src/common/core.entity';
 @ObjectType()
 @Entity()
 export class User extends CoreEntity {
-  @PrimaryGeneratedColumn()
-  @Field(() => Number)
-  no: number;
-
   @Field(() => String)
   @Column()
   name: string;

@@ -16,6 +16,7 @@ exports.UserService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
+const jsonwebtoken_1 = require("jsonwebtoken");
 const user_entity_1 = require("./entities/user.entity");
 let UserService = class UserService {
     constructor(user) {
@@ -34,6 +35,30 @@ let UserService = class UserService {
             is_deleted: false,
         });
         return this.user.save(newUser);
+    }
+    async login({ type, idx }) {
+        try {
+            const user = await (type === 'kakao'
+                ? this.user.findOne({ kakao: idx })
+                : this.user.findOne({ naver: idx }));
+            if (!user) {
+                return {
+                    ok: false,
+                    error: 'User not found',
+                };
+            }
+            return {
+                ok: true,
+                accessToken: jsonwebtoken_1.default.sign({ no: user.no, type: 'access' }, 'ddd'),
+                refreshToken: jsonwebtoken_1.default.sign({ no: user.no, type: 'refresh' }, 'ddd'),
+            };
+        }
+        catch (error) {
+            return {
+                ok: false,
+                error,
+            };
+        }
     }
 };
 UserService = __decorate([

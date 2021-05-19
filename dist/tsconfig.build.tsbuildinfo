@@ -6351,13 +6351,13 @@
         "affectsGlobalScope": false
       },
       "../src/common/core.entity.ts": {
-        "version": "f678e6131dcedbce713bbfa0e0efe1f450633f6ca7cbb9fd8f5398e2f25f1e01",
-        "signature": "b6099dbbbfc6cc1b6e1ca49a8d86f8f04b0d5976db56229c5206c080d32516ad",
+        "version": "ea62a74c8d826cfdb7ed7cdab757fd8739b5be37485f9360bf8a4e983be6e6d6",
+        "signature": "f12b997e6fcbbf555368280e7d5d5db11a821d81f01ff226adf65060ba48d482",
         "affectsGlobalScope": false
       },
       "../src/user/entities/user.entity.ts": {
-        "version": "6e2f4a7bb2e5c6394ac960cf0611b213d6deb9f81c23423cb920d7f4006ac287",
-        "signature": "2cceb019d5ce4a6cc29ce0299499251c9be1f8346b86709abf8a07c231dcf24a",
+        "version": "6ae22715298d35a0d7bb1cd6148c64462df9edea338bbbe45c60bd1015206157",
+        "signature": "e3f7f47e7680d6361d521e4851c1295e69b974e0bb507b1f7dbfde39e599957c",
         "affectsGlobalScope": false
       },
       "../node_modules/@nestjs/typeorm/dist/interfaces/entity-class-or-schema.type.d.ts": {
@@ -6405,24 +6405,29 @@
         "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
         "affectsGlobalScope": false
       },
+      "../node_modules/@types/jsonwebtoken/index.d.ts": {
+        "version": "82cffc446a000271c34cdf657c5aaa397c87183762431efe5e09660979cce586",
+        "signature": "82cffc446a000271c34cdf657c5aaa397c87183762431efe5e09660979cce586",
+        "affectsGlobalScope": false
+      },
       "../src/user/dtos/create-user.dto.ts": {
-        "version": "f166fa29444c3c20dade616b7d7a0a7d48a1e2f5d7c1f3c674831cab97cf3f88",
-        "signature": "765c2c857e2589ad40005a1a661ed57c623b3a4316a32d21c2e349e3b8bc4586",
+        "version": "af27936131a7525976fce475dbb01473b8ec0a04243143f96cdb72e3864013fc",
+        "signature": "f80b0150da5b5a0cb3f3daea07bb87d93f952cab5cff2eb4b74ce3a958a5c492",
+        "affectsGlobalScope": false
+      },
+      "../src/user/dtos/login.dtos.ts": {
+        "version": "8a81235107e1bce53bfb29b5c974d854be6ee3bc1af32cd6bcaa05693f17f66d",
+        "signature": "392aeb6484817c41d3b8d4cb07474c41ece2660d13ea11ec47a84b844cb9963e",
         "affectsGlobalScope": false
       },
       "../src/user/user.service.ts": {
-        "version": "85522f98b848f32cd08668f3c47f13e8a53c4c68b2bfc8c85e16193f6e4940c9",
-        "signature": "dc0189643014b4a395e1122d83e23a1d717623e1bb3ed7fef6421d66c97ef4c3",
+        "version": "fb10e99844b6c5b5d371c6a10cebe52ba8e1197a5b548c83ebaa82e9c6e31538",
+        "signature": "39e6687f51051208ff16d1967e8791401a00f2a52847ea82bfee2d164452ce65",
         "affectsGlobalScope": false
       },
       "../src/user/user.resolver.ts": {
-        "version": "dd36fcf414396f84114a364780f50e9f6a4c7dd6c09cf99cb7153c72b85a2a37",
-        "signature": "14c1a474ac8f9af1c63339a8226e8ea978608a0a89dd49e05e8501faed6422df",
-        "affectsGlobalScope": false
-      },
-      "../src/user/user.module.ts": {
-        "version": "8889ac55976f5c19a65d99c139f5228b301962d031411a6524fd45cd0144c1bb",
-        "signature": "482b8f0d35a3d453500a15b6c6057c1e4c40baa4329b39da9e1026d8e1de4329",
+        "version": "29fb48b8b547fff3f98733e2890ab5d999855aff183a081af7af70ebd8bcd137",
+        "signature": "573736ef50b042ac5b09b96015dd2d671a7b681abae2e237461f047551130816",
         "affectsGlobalScope": false
       },
       "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts": {
@@ -6490,13 +6495,18 @@
         "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
         "affectsGlobalScope": false
       },
+      "../src/user/user.module.ts": {
+        "version": "bcd805abee4de368b78187e5f77a5c6f9d09c03899e37735cd7c11d39318f2b7",
+        "signature": "482b8f0d35a3d453500a15b6c6057c1e4c40baa4329b39da9e1026d8e1de4329",
+        "affectsGlobalScope": false
+      },
       "../node_modules/joi/lib/index.d.ts": {
         "version": "332bc92a89da24ef3a645208f2b3159292460a52fbe63c40eef64c2a63bb1e40",
         "signature": "332bc92a89da24ef3a645208f2b3159292460a52fbe63c40eef64c2a63bb1e40",
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "f3a08eace0caf508a86c12d0544d60f2f66d659612dc9aa509798e4b003c391e",
+        "version": "13cc53a226624a8c5c55441a3a272c2a2b78551cfb8f0ace4f46793494969ab3",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
@@ -8573,6 +8583,9 @@
       "../node_modules/@types/jest/index.d.ts": [
         "../node_modules/jest-diff/build/index.d.ts",
         "../node_modules/pretty-format/build/index.d.ts"
+      ],
+      "../node_modules/@types/jsonwebtoken/index.d.ts": [
+        "../node_modules/@types/node/index.d.ts"
       ],
       "../node_modules/@types/koa-compose/index.d.ts": [
         "../node_modules/@types/koa/index.d.ts"
@@ -11881,6 +11894,7 @@
         "../node_modules/@nestjs/common/index.d.ts"
       ],
       "../src/common/core.entity.ts": [
+        "../node_modules/@nestjs/graphql/index.d.ts",
         "../node_modules/typeorm/index.d.ts"
       ],
       "../src/main.ts": [
@@ -11891,6 +11905,10 @@
         "../node_modules/@nestjs/graphql/index.d.ts",
         "../src/user/entities/user.entity.ts"
       ],
+      "../src/user/dtos/login.dtos.ts": [
+        "../node_modules/@nestjs/graphql/index.d.ts",
+        "../src/common/core.entity.ts"
+      ],
       "../src/user/entities/user.entity.ts": [
         "../node_modules/@nestjs/graphql/index.d.ts",
         "../node_modules/class-validator/types/index.d.ts",
@@ -11899,6 +11917,7 @@
       ],
       "../src/user/user.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/config/index.d.ts",
         "../node_modules/@nestjs/typeorm/index.d.ts",
         "../src/user/entities/user.entity.ts",
         "../src/user/user.resolver.ts",
@@ -11907,14 +11926,17 @@
       "../src/user/user.resolver.ts": [
         "../node_modules/@nestjs/graphql/index.d.ts",
         "../src/user/dtos/create-user.dto.ts",
+        "../src/user/dtos/login.dtos.ts",
         "../src/user/entities/user.entity.ts",
         "../src/user/user.service.ts"
       ],
       "../src/user/user.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../node_modules/@types/jsonwebtoken/index.d.ts",
         "../node_modules/typeorm/index.d.ts",
         "../src/user/dtos/create-user.dto.ts",
+        "../src/user/dtos/login.dtos.ts",
         "../src/user/entities/user.entity.ts"
       ]
     },
@@ -13783,6 +13805,9 @@
       "../node_modules/@types/jest/index.d.ts": [
         "../node_modules/jest-diff/build/index.d.ts",
         "../node_modules/pretty-format/build/index.d.ts"
+      ],
+      "../node_modules/@types/jsonwebtoken/index.d.ts": [
+        "../node_modules/@types/node/index.d.ts"
       ],
       "../node_modules/@types/koa-compose/index.d.ts": [
         "../node_modules/@types/koa/index.d.ts"
@@ -17082,17 +17107,22 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/user/entities/user.entity.ts"
       ],
+      "../src/user/dtos/login.dtos.ts": [
+        "../src/common/core.entity.ts"
+      ],
       "../src/user/entities/user.entity.ts": [
         "../src/common/core.entity.ts"
       ],
       "../src/user/user.resolver.ts": [
         "../src/user/dtos/create-user.dto.ts",
+        "../src/user/dtos/login.dtos.ts",
         "../src/user/entities/user.entity.ts",
         "../src/user/user.service.ts"
       ],
       "../src/user/user.service.ts": [
         "../node_modules/typeorm/index.d.ts",
         "../src/user/dtos/create-user.dto.ts",
+        "../src/user/dtos/login.dtos.ts",
         "../src/user/entities/user.entity.ts"
       ]
     },
@@ -17569,6 +17599,7 @@
       "../node_modules/@types/jest/index.d.ts",
       "../node_modules/@types/json-schema/index.d.ts",
       "../node_modules/@types/json5/index.d.ts",
+      "../node_modules/@types/jsonwebtoken/index.d.ts",
       "../node_modules/@types/keygrip/index.d.ts",
       "../node_modules/@types/koa-compose/index.d.ts",
       "../node_modules/@types/koa/index.d.ts",
@@ -18431,6 +18462,7 @@
       "../src/common/core.entity.ts",
       "../src/main.ts",
       "../src/user/dtos/create-user.dto.ts",
+      "../src/user/dtos/login.dtos.ts",
       "../src/user/entities/user.entity.ts",
       "../src/user/user.module.ts",
       "../src/user/user.resolver.ts",

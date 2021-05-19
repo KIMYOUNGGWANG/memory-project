@@ -1,9 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import JWT from 'jsonwebtoken';
 import { User } from './entities/user.entity';
 import { CreateUserDto } from './dtos/create-user.dto';
-
+import { LoginInput } from './dtos/login.dtos';
+// JWT.
 @Injectable()
 export class UserService {
   constructor(
@@ -25,5 +27,35 @@ export class UserService {
       is_deleted: false,
     });
     return this.user.save(newUser);
+  }
+
+  async login({ type, idx }: LoginInput): Promise<{
+    ok: boolean;
+    error?: string;
+    accessToken?: string;
+    refreshToken?: string;
+  }> {
+    // make a JWT and give it to the user
+    try {
+      const user = await (type === 'kakao'
+        ? this.user.findOne({ kakao: idx })
+        : this.user.findOne({ naver: idx }));
+      if (!user) {
+        return {
+          ok: false,
+          error: 'User not found',
+        };
+      }
+      return {
+        ok: true,
+        accessToken: JWT.sign({ no: user.no, type: 'access' }, 'ddd'),
+        refreshToken: JWT.sign({ no: user.no, type: 'refresh' }, 'ddd'),
+      };
+    } catch (error) {
+      return {
+        ok: false,
+        error,
+      };
+    }
   }
 }
