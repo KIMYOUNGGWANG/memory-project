@@ -1,15 +1,18 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import JWT from 'jsonwebtoken';
 import { User } from './entities/user.entity';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { LoginInput } from './dtos/login.dtos';
+import { JwtService } from 'src/jwt/jwt.service';
+import { ConfigService } from '@nestjs/config';
 // JWT.
 @Injectable()
 export class UserService {
   constructor(
     @InjectRepository(User) private readonly user: Repository<User>,
+    private readonly config: ConfigService,
+    private readonly jwtService: JwtService,
   ) {}
   // getUser(no):Promise<User>{
   //   return this.user.findByIds()
@@ -46,10 +49,11 @@ export class UserService {
           error: 'User not found',
         };
       }
+      const [accessToken, refreshToken] = this.jwtService.sign(user.no);
       return {
         ok: true,
-        accessToken: JWT.sign({ no: user.no, type: 'access' }, 'ddd'),
-        refreshToken: JWT.sign({ no: user.no, type: 'refresh' }, 'ddd'),
+        accessToken,
+        refreshToken,
       };
     } catch (error) {
       return {

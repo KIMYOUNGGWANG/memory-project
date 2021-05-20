@@ -3,6 +3,7 @@ import { User } from './entities/user.entity';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { LoginOutput, LoginInput } from './dtos/login.dtos';
+import { query } from 'express';
 
 @Resolver(() => User)
 export class UserResolver {
@@ -37,4 +38,6 @@ export class UserResolver {
       };
     }
   }
+  @Query(() => User)
+  getUser() {}
 }
