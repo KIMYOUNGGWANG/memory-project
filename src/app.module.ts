@@ -12,6 +12,8 @@ import * as Joi from 'joi';
 import { User } from './user/entities/user.entity';
 import { JwtModule } from './jwt/jwt.module';
 import { JwtMiddleware } from './jwt/jwt.middleware';
+import { GroupUserModule } from './group-user/group-user.module';
+import { GroupUser } from './group-user/entities/group-user.entity';
 @Module({
   imports: [
     UserModule,
@@ -36,7 +38,7 @@ import { JwtMiddleware } from './jwt/jwt.middleware';
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      entities: [User],
+      entities: [User, GroupUser],
       synchronize: process.env.NODE_ENV !== 'prod',
       logging: true,
     }),
@@ -45,6 +47,7 @@ import { JwtMiddleware } from './jwt/jwt.middleware';
       context: ({ req }) => ({ user: req['user'] }),
     }),
     JwtModule.forRoot({ privateKey: process.env.SECRET_KEY }),
+    GroupUserModule,
   ],
   controllers: [],
   providers: [],

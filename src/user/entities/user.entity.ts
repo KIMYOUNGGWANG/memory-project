@@ -1,7 +1,8 @@
 import { ObjectType, Field, InputType } from '@nestjs/graphql';
-import { Entity, Column } from 'typeorm';
+import { Entity, Column, OneToMany } from 'typeorm';
 import { IsOptional } from 'class-validator';
 import { CoreEntity } from 'src/common/core.entity';
+import { GroupUser } from 'src/group-user/entities/group-user.entity';
 
 @InputType({ isAbstract: true })
 @ObjectType()
@@ -47,4 +48,9 @@ export class User extends CoreEntity {
   @Column({ default: 0 })
   @IsOptional()
   naver?: number;
+
+  @OneToMany(() => GroupUser, groupUser => groupUser.user) //나중에 그룹 추가시 넣음
+  @Field(() => [User])
+  @Column()
+  groupUser: GroupUser[];
 }
