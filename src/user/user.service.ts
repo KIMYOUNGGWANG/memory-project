@@ -11,12 +11,8 @@ import { ConfigService } from '@nestjs/config';
 export class UserService {
   constructor(
     @InjectRepository(User) private readonly user: Repository<User>,
-    private readonly config: ConfigService,
     private readonly jwtService: JwtService,
   ) {}
-  // getUser(no):Promise<User>{
-  //   return this.user.findByIds()
-  // }
   createUser(createUserDto: CreateUserDto): Promise<User> {
     const today = new Date();
     const newUser = this.user.create({
@@ -61,5 +57,9 @@ export class UserService {
         error,
       };
     }
+  }
+
+  async findByNo(no: number): Promise<User> {
+    return this.user.findOne({ no });
   }
 }

@@ -3,7 +3,10 @@ import { User } from './entities/user.entity';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { LoginOutput, LoginInput } from './dtos/login.dtos';
-import { query } from 'express';
+import { AuthGard } from 'src/auth/auth.guard';
+import { UseGuards } from '@nestjs/common';
+import { AuthUser } from 'src/auth/auth.decorator';
+import { UserProfileInput } from './dtos/user-profile.dto';
 
 @Resolver(() => User)
 export class UserResolver {
@@ -39,5 +42,16 @@ export class UserResolver {
     }
   }
   @Query(() => User)
-  getUser() {}
+  @UseGuards(AuthGard)
+  me(@AuthUser() authUser: User) {
+    console.log(authUser);
+    return authUser;
+  }
+
+  @Query(() => User)
+  @UseGuards(AuthGard)
+  getUser(@Args() userProfileInput: UserProfileInput) {
+    const user = this.userService.findByNo(userProfileInput.userNo);
+    return user;
+  }
 }
