@@ -41,8 +41,8 @@ group-user
 - no
 - group-permission
 - nickname
-- user-no ${"->"} fk for user
-- group-no ${"->"} fk for group
+- user-no -> fk for user
+- group-no -> fk for group
 - created-at
 - updated-at
 
@@ -55,7 +55,7 @@ group
 
 story
 - no
-- group-no ${"->"} fk for group
+- group-no -> fk for group
 - name
 - date
 - description
@@ -68,21 +68,21 @@ story
 
 participant ${"필요한가.."}
 - no
-- story-no ${"->"} fk for story
-- group-user-no ${"->"} fk for group-user
+- story-no -> fk for story
+- group-user-no -> fk for group-user
 
 story-comment ${"필요한가.."}
 - no
-- group-user-no ${"->"} fk for group-user
+- group-user-no -> fk for group-user
 - message
 - created-at
 - updated-at
 - created-by
-- story-no ${"->"} fk for story
+- story-no -> fk for story
 
 episode
 - no
-- story-no ${"->"} fk for story
+- story-no -> fk for story
 - oord-x
 - oord-y
 - name
@@ -96,12 +96,12 @@ episode
 
 episode-comment
 - no
-- group-user-no ${"->"} fk for group-user
+- group-user-no -> fk for group-user
 - message
 - created-at
 - updated-at
 - created-by
-- episode-no ${"->"} fk for episode
+- episode-no -> fk for episode
 ```
 
 ## Installation
