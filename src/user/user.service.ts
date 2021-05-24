@@ -11,7 +11,7 @@ export class UserService {
     @InjectRepository(User) private readonly user: Repository<User>,
     private readonly jwtService: JwtService,
   ) {}
-  createUser(createUserDto: CreateUserDto): Promise<User> {
+  async createUser(createUserDto: CreateUserDto): Promise<User> {
     const today = new Date();
     const newUser = this.user.create({
       name: createUserDto.name,
@@ -23,6 +23,11 @@ export class UserService {
       last_loged_in: today,
       is_deleted: false,
     });
+    if (createUserDto.registerType === 'kakao') {
+      newUser.kakao = createUserDto.kakao;
+    } else {
+      newUser.naver = createUserDto.naver;
+    }
     return this.user.save(newUser);
   }
 

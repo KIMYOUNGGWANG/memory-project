@@ -2,20 +2,25 @@ import { ObjectType, Field, InputType } from '@nestjs/graphql';
 import { Entity, Column, ManyToOne } from 'typeorm';
 import { CoreEntity } from 'src/common/core.entity';
 import { User } from 'src/user/entities/user.entity';
+import { GroupSpace } from 'src/group/entities/group.entity';
 
-@InputType({ isAbstract: true })
+@InputType('groupUserInputType', { isAbstract: true })
 @ObjectType()
 @Entity()
 export class GroupUser extends CoreEntity {
-  @ManyToOne(() => User, user => user.groupUser)
+  @ManyToOne(() => User, user => user.groupUser, {
+    nullable: true,
+    onDelete: 'SET NULL',
+  })
   @Field(() => User)
-  @Column()
   user: User;
 
-  // @OneToMany(() => Group, group => group.no)//나중에 그룹 추가시 넣음
-  // @Field()
-  // @Column()
-  // groupNo: number[];
+  @ManyToOne(() => GroupSpace, user => user.groupUser, {
+    nullable: true,
+    onDelete: 'CASCADE',
+  })
+  @Field(() => GroupSpace)
+  group: GroupSpace;
 
   @Field(() => String)
   @Column()

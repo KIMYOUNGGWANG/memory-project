@@ -1,4 +1,4 @@
-import { InputType, OmitType } from '@nestjs/graphql';
+import { InputType, OmitType, Field } from '@nestjs/graphql';
 import { User } from '../entities/user.entity';
 
 // @ArgsType()
@@ -31,5 +31,9 @@ export class CreateUserDto extends OmitType(User, [
   'is_deleted',
   'last_loged_in',
   'created_at',
+  'updated_at',
   'permission',
-]) {}
+]) {
+  @Field(() => String)
+  registerType: 'kakao' | 'naver';
+}

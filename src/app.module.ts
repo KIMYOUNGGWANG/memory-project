@@ -12,8 +12,9 @@ import * as Joi from 'joi';
 import { User } from './user/entities/user.entity';
 import { JwtModule } from './jwt/jwt.module';
 import { JwtMiddleware } from './jwt/jwt.middleware';
-import { GroupUserModule } from './group-user/group-user.module';
-import { GroupUser } from './group-user/entities/group-user.entity';
+import { GroupModule } from './group/group.module';
+import { GroupSpace } from './group/entities/group.entity';
+import { GroupUser } from './group/entities/group-user.entity';
 @Module({
   imports: [
     UserModule,
@@ -38,7 +39,7 @@ import { GroupUser } from './group-user/entities/group-user.entity';
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      entities: [User, GroupUser],
+      entities: [User, GroupUser, GroupSpace],
       synchronize: process.env.NODE_ENV !== 'prod',
       logging: true,
     }),
@@ -47,7 +48,7 @@ import { GroupUser } from './group-user/entities/group-user.entity';
       context: ({ req }) => ({ user: req['user'] }),
     }),
     JwtModule.forRoot({ privateKey: process.env.SECRET_KEY }),
-    GroupUserModule,
+    GroupModule,
   ],
   controllers: [],
   providers: [],

@@ -25,11 +25,12 @@ export class JwtMiddleware implements NestMiddleware {
             console.log(decoded['expire']);
 
             console.log(new Date().valueOf());
+            console.log(user);
+            req['user'] = user;
             if (decoded['expire'] < new Date().valueOf()) {
               req['expire'] = true;
               throw 'expire token';
             }
-            req['user'] = user;
           } catch (error) {}
         }
       }

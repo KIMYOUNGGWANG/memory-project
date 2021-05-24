@@ -2,9 +2,9 @@ import { ObjectType, Field, InputType } from '@nestjs/graphql';
 import { Entity, Column, OneToMany } from 'typeorm';
 import { IsOptional } from 'class-validator';
 import { CoreEntity } from 'src/common/core.entity';
-import { GroupUser } from 'src/group-user/entities/group-user.entity';
+import { GroupUser } from 'src/group/entities/group-user.entity';
 
-@InputType({ isAbstract: true })
+@InputType('userInputType', { isAbstract: true })
 @ObjectType()
 @Entity()
 export class User extends CoreEntity {
@@ -49,8 +49,10 @@ export class User extends CoreEntity {
   @IsOptional()
   naver?: number;
 
-  @OneToMany(() => GroupUser, groupUser => groupUser.user) //나중에 그룹 추가시 넣음
-  @Field(() => [User])
-  @Column()
+  @OneToMany(() => GroupUser, groupUser => groupUser.user, {
+    nullable: true,
+    onDelete: 'SET NULL',
+  })
+  @Field(() => [GroupUser], { nullable: true })
   groupUser: GroupUser[];
 }
