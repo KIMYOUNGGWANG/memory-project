@@ -22,11 +22,10 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## table
 
 ```bash
-# table
-user
+# user
 - no
 - permission
 - name
@@ -37,7 +36,7 @@ user
 - kakao
 - naver
 
-group-user
+# group-user
 - no
 - group-permission
 - nickname
@@ -46,14 +45,14 @@ group-user
 - created-at
 - updated-at
 
-group
+# group
 - no
 - name
 - description
 - ${"type"}
 - cover-img
 
-story
+# story
 - no
 - group-no -> fk for group
 - name
@@ -66,12 +65,12 @@ story
 - updated-at
 - updated-by
 
-participant ${"필요한가.."}
+# participant (필요한가..)
 - no
 - story-no -> fk for story
 - group-user-no -> fk for group-user
 
-story-comment ${"필요한가.."}
+# story-comment (필요한가..)
 - no
 - group-user-no -> fk for group-user
 - message
@@ -80,7 +79,7 @@ story-comment ${"필요한가.."}
 - created-by
 - story-no -> fk for story
 
-episode
+# episode
 - no
 - story-no -> fk for story
 - oord-x
@@ -94,7 +93,7 @@ episode
 - updated-at
 - updated-by
 
-episode-comment
+# episode-comment
 - no
 - group-user-no -> fk for group-user
 - message
@@ -102,6 +101,47 @@ episode-comment
 - updated-at
 - created-by
 - episode-no -> fk for episode
+```
+
+## Feature
+
+```bash
+# User
+- 회원가입
+- 로그인
+- 정보수정
+- 탈퇴
+
+# Group
+- 그룹 생성
+- 그룹 수정
+- 그룹 선택(1명의 유저가 많은 유자)
+- 삭제
+- 공유(회원이 아닌사람에게)
+- 그룹 유저 관리(운영진)
+- episode(사진) 관리(permission 등급)
+
+# Story
+- 생성
+- 수정
+- 삭제
+- permission에 따른 date관리
+
+# story comment
+- 생성
+- 수정
+- 삭제
+- permission에 따른 관리
+
+# Episode
+- 생성
+- 수정
+- 삭제
+- permission에 따른 epi관리
+
+# Episode comment
+- 생성
+- 수정
 ```
 
 ## Installation
