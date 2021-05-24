@@ -24,7 +24,85 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+```bash
+# table
+user
+- no
+- permission
+- name
+- hp
+- img
+- created-at
+- updated-at
+- kakao
+- naver
+
+group-user
+- no
+- group-permission
+- nickname
+- user-no ${"->"} fk for user
+- group-no ${"->"} fk for group
+- created-at
+- updated-at
+
+group
+- no
+- name
+- description
+- ${"type"}
+- cover-img
+
+story
+- no
+- group-no ${"->"} fk for group
+- name
+- date
+- description
+- oord-x
+- oord-y
+- created-at
+- created-by
+- updated-at
+- updated-by
+
+participant ${"필요한가.."}
+- no
+- story-no ${"->"} fk for story
+- group-user-no ${"->"} fk for group-user
+
+story-comment ${"필요한가.."}
+- no
+- group-user-no ${"->"} fk for group-user
+- message
+- created-at
+- updated-at
+- created-by
+- story-no ${"->"} fk for story
+
+episode
+- no
+- story-no ${"->"} fk for story
+- oord-x
+- oord-y
+- name
+- description
+- img
+- date
+- created-at
+- created-by
+- updated-at
+- updated-by
+
+episode-comment
+- no
+- group-user-no ${"->"} fk for group-user
+- message
+- created-at
+- updated-at
+- created-by
+- episode-no ${"->"} fk for episode
+```
 
 ## Installation
 
