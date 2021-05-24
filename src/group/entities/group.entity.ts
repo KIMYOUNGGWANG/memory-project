@@ -1,7 +1,8 @@
 import { ObjectType, Field, InputType } from '@nestjs/graphql';
-import { Entity, Column, OneToMany } from 'typeorm';
+import { Entity, Column, OneToMany, ManyToMany } from 'typeorm';
 import { CoreEntity } from 'src/common/core.entity';
 import { GroupUser } from './group-user.entity';
+import { Story } from 'src/story/entities/story.entity';
 
 @InputType('groupSpaceInputType', { isAbstract: true })
 @ObjectType()
@@ -33,4 +34,10 @@ export class GroupSpace extends CoreEntity {
   })
   @Field(() => [GroupUser], { nullable: true })
   groupUser: GroupUser[];
+
+  @ManyToMany(() => Story, story => story.groupSpace, {
+    onDelete: 'SET NULL',
+  })
+  @Field(() => [Story], { nullable: true })
+  story: Story[];
 }

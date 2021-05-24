@@ -15,6 +15,8 @@ import { JwtMiddleware } from './jwt/jwt.middleware';
 import { GroupModule } from './group/group.module';
 import { GroupSpace } from './group/entities/group.entity';
 import { GroupUser } from './group/entities/group-user.entity';
+import { StoryModule } from './story/story.module';
+import { Story } from './story/entities/story.entity';
 @Module({
   imports: [
     UserModule,
@@ -39,7 +41,7 @@ import { GroupUser } from './group/entities/group-user.entity';
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      entities: [User, GroupUser, GroupSpace],
+      entities: [User, GroupUser, GroupSpace, Story],
       synchronize: process.env.NODE_ENV !== 'prod',
       logging: true,
     }),
@@ -49,6 +51,7 @@ import { GroupUser } from './group/entities/group-user.entity';
     }),
     JwtModule.forRoot({ privateKey: process.env.SECRET_KEY }),
     GroupModule,
+    StoryModule,
   ],
   controllers: [],
   providers: [],
