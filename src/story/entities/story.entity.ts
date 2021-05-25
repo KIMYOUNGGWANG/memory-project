@@ -1,8 +1,6 @@
 import { ObjectType, Field, InputType } from '@nestjs/graphql';
-import { Entity, Column, OneToMany, ManyToOne, ManyToMany } from 'typeorm';
-import { IsOptional } from 'class-validator';
+import { Entity, Column, ManyToOne, RelationId } from 'typeorm';
 import { CoreEntity } from 'src/common/core.entity';
-import { GroupUser } from 'src/group/entities/group-user.entity';
 import { GroupSpace } from 'src/group/entities/group.entity';
 
 @InputType('userInputType', { isAbstract: true })
@@ -29,11 +27,15 @@ export class Story extends CoreEntity {
   @Column()
   date: Date;
 
-  @ManyToMany(() => GroupSpace, groupSpace => groupSpace.story, {
+  @ManyToOne(() => GroupSpace, groupSpace => groupSpace.story, {
     onDelete: 'CASCADE',
   })
   @Field(() => [GroupSpace])
-  groupSpace: GroupSpace[];
+  groupSpace: GroupSpace;
+
+  @RelationId((story: Story) => story.groupSpace)
+  groupSpaceNo: number;
+
   // @OneToMany(() => GroupUser, groupUser => groupUser.user, {
   //   nullable: true,
   //   onDelete: 'SET NULL',

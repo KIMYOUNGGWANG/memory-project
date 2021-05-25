@@ -21,26 +21,28 @@ export class GroupService {
     // console.log(this.user);
     const today = new Date();
     try {
-      const newGroup = this.groupSpace.create({
-        name: createGroupInput.name,
-        description: createGroupInput.description,
-        type: 'N',
-        coverImg: '',
-        is_deleted: false,
-        created_at: today,
-        updated_at: today,
-      });
-      const newGroupUser = this.groupUser.create({
-        user: user,
-        userNickname: user.name,
-        group: newGroup,
-        groupPermission: 'owner',
-        isDeleted: false,
-        created_at: today,
-        updated_at: today,
-      });
-      await this.groupSpace.save(newGroup);
-      await this.groupUser.save(newGroupUser);
+      const newGroup = await this.groupSpace.save(
+        this.groupSpace.create({
+          name: createGroupInput.name,
+          description: createGroupInput.description,
+          type: 'N',
+          coverImg: '',
+          is_deleted: false,
+          created_at: today,
+          updated_at: today,
+        }),
+      );
+      const newGroupUser = await this.groupUser.save(
+        this.groupUser.create({
+          user: user,
+          userNickname: user.name,
+          group: newGroup,
+          groupPermission: 'owner',
+          isDeleted: false,
+          created_at: today,
+          updated_at: today,
+        }),
+      );
       return {
         ok: true,
       };
