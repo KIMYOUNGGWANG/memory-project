@@ -3,7 +3,7 @@ import { GroupSpace } from './entities/group.entity';
 import { CreateGroupInput, CreateGroupOutput } from './dtos/create-group.dto';
 import { GroupService } from './group.service';
 import { UseGuards } from '@nestjs/common';
-import { AuthGard } from 'src/auth/auth.guard';
+import { AuthGaurd } from 'src/auth/auth.guard';
 import { AuthUser } from 'src/auth/auth.decorator';
 import { User } from 'src/user/entities/user.entity';
 
@@ -16,7 +16,7 @@ export class GroupResolver {
   }
 
   @Mutation(() => CreateGroupOutput)
-  @UseGuards(AuthGard)
+  @UseGuards(AuthGaurd)
   createGroup(
     @Args('input') createGroupInput: CreateGroupInput,
     @AuthUser() user: User,

@@ -3,7 +3,7 @@ import { Entity, Column, ManyToOne, RelationId } from 'typeorm';
 import { CoreEntity } from 'src/common/core.entity';
 import { GroupSpace } from 'src/group/entities/group.entity';
 
-@InputType('userInputType', { isAbstract: true })
+@InputType('storyInputType', { isAbstract: true })
 @ObjectType()
 @Entity()
 export class Story extends CoreEntity {
@@ -34,6 +34,7 @@ export class Story extends CoreEntity {
   groupSpace: GroupSpace;
 
   @RelationId((story: Story) => story.groupSpace)
+  @Column()
   groupSpaceNo: number;
 
   // @OneToMany(() => GroupUser, groupUser => groupUser.user, {
