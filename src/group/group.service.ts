@@ -5,6 +5,7 @@ import { Repository } from 'typeorm';
 import { CreateGroupInput, CreateGroupOutput } from './dtos/create-group.dto';
 import { User } from 'src/user/entities/user.entity';
 import { GroupUser } from './entities/group-user.entity';
+import { EditGroupInput, EditGroupOutput } from './dtos/edit-group.dto';
 
 @Injectable()
 export class GroupService {
@@ -32,7 +33,7 @@ export class GroupService {
           updated_at: today,
         }),
       );
-      const newGroupUser = await this.groupUser.save(
+      await this.groupUser.save(
         this.groupUser.create({
           user: user,
           userNickname: user.name,
@@ -50,6 +51,23 @@ export class GroupService {
       return {
         ok: false,
         error: "group isn't created",
+      };
+    }
+  }
+  async editGroup(
+    user: GroupUser,
+    editGroupInput: EditGroupInput,
+  ): Promise<EditGroupOutput> {
+    try {
+      const group = await this.groupSpace.findOne(editGroupInput.groupNo, {
+        loadRelationIds: true,
+      });
+
+      return { ok: true };
+    } catch (error) {
+      return {
+        ok: false,
+        error: 'group not found',
       };
     }
   }
