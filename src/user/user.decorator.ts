@@ -5,3 +5,4 @@ export const UserPermission = (permissions: string[]) =>
 
 export const GroupPermission = (permissions: string[]) =>
   SetMetadata('permission', permissions);
+///
