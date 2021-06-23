@@ -1,9 +1,9 @@
 import { ObjectType, Field, InputType } from '@nestjs/graphql';
-import { Entity, Column, OneToMany, OneToOne } from 'typeorm';
+import { Entity, Column, OneToMany } from 'typeorm';
 import { CoreEntity } from 'src/common/core.entity';
 import { GroupUser } from './group-user.entity';
 import { Story } from 'src/story/entities/story.entity';
-import { User } from 'src/user/entities/user.entity';
+// import { User } from 'src/user/entities/user.entity';
 
 @InputType('groupSpaceInputType', { isAbstract: true })
 @ObjectType()
