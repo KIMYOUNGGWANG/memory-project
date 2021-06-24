@@ -17,6 +17,7 @@ import { GroupSpace } from './group/entities/group.entity';
 import { GroupUser } from './group/entities/group-user.entity';
 import { StoryModule } from './story/story.module';
 import { Story } from './story/entities/story.entity';
+import { EpisodeModule } from './episode/episode.module';
 @Module({
   imports: [
     UserModule,
@@ -52,6 +53,7 @@ import { Story } from './story/entities/story.entity';
     JwtModule.forRoot({ privateKey: process.env.SECRET_KEY }),
     GroupModule,
     StoryModule,
+    EpisodeModule,
   ],
   controllers: [],
   providers: [],
