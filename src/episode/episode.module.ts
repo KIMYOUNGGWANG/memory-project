@@ -5,7 +5,7 @@ import { GroupUser } from 'src/group/entities/group-user.entity';
 
 @Module({
   imports: [TypeOrmModule.forFeature([GroupSpace, GroupUser])],
-  providers: [GroupResolver, GroupService],
-  exports: [GroupService],
+  providers: [],
+  exports: [],
 })
 export class EpisodeModule {}
