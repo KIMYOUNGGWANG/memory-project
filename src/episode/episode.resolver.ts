@@ -6,8 +6,9 @@ import { User } from 'src/user/entities/user.entity';
 // import { EditGroupOutput, EditGroupInput } from './dtos/edit-group.dto';
 import { UserPermission } from 'src/user/user.decorator';
 import { GroupService } from 'src/group/group.service';
+import { Episode } from './entities/episode.entities';
 
-@Resolver(() => GroupSpace)
+@Resolver(() => Episode)
 export class EpisodeResolver {
   constructor(private readonly groupSevice: GroupService) {}
   @Query(() => Boolean)

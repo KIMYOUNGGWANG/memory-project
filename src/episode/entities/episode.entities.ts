@@ -3,12 +3,13 @@ import { Entity, Column, OneToMany } from 'typeorm';
 import { CoreEntity } from 'src/common/core.entity';
 // import { GroupUser } from './group-user.entity';
 import { Story } from 'src/story/entities/story.entity';
+import { GroupUser } from 'src/group/entities/group-user.entity';
 // import { User } from 'src/user/entities/user.entity';
 
 @InputType('groupSpaceInputType', { isAbstract: true })
 @ObjectType()
 @Entity()
-export class GroupSpace extends CoreEntity {
+export class Episode extends CoreEntity {
   @Field(() => String)
   @Column()
   name: string;
@@ -19,24 +20,16 @@ export class GroupSpace extends CoreEntity {
 
   @Field(() => String)
   @Column()
-  type: string; // 돈냈냐?
-
-  @Field(() => String)
-  @Column()
   coverImg: string;
 
   @Field(() => Boolean, { defaultValue: false })
   @Column({ default: false })
   is_deleted: boolean;
 
-  // @OneToMany(() => GroupUser, groupUser => groupUser.group, {
-  //   nullable: true,
-  //   onDelete: 'SET NULL',
-  // })
-  // @Field(() => [GroupUser], { nullable: true })
-  // groupUser: GroupUser[];
+  @Field(() => [GroupUser], { nullable: true })
+  groupUser: GroupUser[];
 
-  @OneToMany(() => Story, story => story.groupSpace, {
+  @OneToMany(() => Story, story => story.episodes, {
     onDelete: 'SET NULL',
   })
   @Field(() => [Story], { nullable: true })
