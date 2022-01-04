@@ -1,35 +1,16 @@
 import React from "react";
-<<<<<<< HEAD
-import ReactDOM, { render } from "react-dom";
+import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import DefaultRouter from "Views/common";
 
-declare const module: any;
-
-=======
-import ReactDOM from "react-dom";
-import App from "./app";
->>>>>>> 5a3da01f9aceea6b264e43272808c39cad07138e
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
-<<<<<<< HEAD
 
-const renderEntry = () => {
-  const rootElement = document.getElementById("root");
-  render(<DefaultRouter />, rootElement);
-
-  if (module.hot) {
-    // module.hot.accept("presentation/routes", () => {
-    //   const HotEntryRoute = require("presentation/routes").default;
-    //   render(<HotEntryRoute />, rootElement);
-    // });
-  }
-};
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-=======
->>>>>>> 5a3da01f9aceea6b264e43272808c39cad07138e

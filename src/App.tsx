@@ -1,9 +1,11 @@
 import React from "react";
-import Test from "./test/test/test/tsest";
-const App: React.FC = () => (
-  <div>
-    Hello, Webpack! <Test />
-  </div>
-);
+import { HomeView } from "Views";
+function App() {
+  return (
+    <div className="App">
+      <HomeView />
+    </div>
+  );
+}
 
 export default App;
