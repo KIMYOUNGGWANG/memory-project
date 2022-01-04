@@ -1,13 +1,11 @@
 import React from "react";
-import Test from "Component/index";
-// import
-const App: React.FC = () => {
+import { HomeView } from "Views";
+function App() {
   return (
     <div className="App">
-      this
-      <Test />
+      <HomeView />
     </div>
   );
-};
+}
 
 export default App;

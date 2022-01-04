@@ -1,14 +1,3 @@
 {
-  "plugins": [
-    [
-      "module-resolver",
-      {
-        "root": ["./src/"],
-        "alias": {
-          "Component": "./components",
-          "underscore": "lodash"
-        }
-      }
-    ]
-  ]
+  "presets": ["@babel/preset-env", "@babel/preset-react", "@babel/typescript"]
 }
