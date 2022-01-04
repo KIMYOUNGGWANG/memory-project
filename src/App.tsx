@@ -1,7 +1,9 @@
 import React from "react";
-// import
-const App: React.FC = () => {
-  return <div className="App">this</div>;
-};
+import Test from "./test/test/test/tsest";
+const App: React.FC = () => (
+  <div>
+    Hello, Webpack! <Test />
+  </div>
+);
 
 export default App;

@@ -1,7 +1,10 @@
 {
-  "name": "test",
-  "version": "0.1.0",
+  "name": "memory",
+  "version": "1.0.0",
   "private": true,
+  "repository": "git@github.com:maintainker/memory-project.git",
+  "author": "maintainker <syhwan88@naver.com>",
+  "license": "MIT",
   "dependencies": {
     "@craco/craco": "^6.4.3",
     "@sentry/react": "^6.16.1",
