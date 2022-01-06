@@ -5,7 +5,7 @@ import {
   AxiosResponse,
 } from "axios";
 import getToken from "./getToken";
-interface NetworkError {
+export interface NetworkError {
   status: number;
   message: null | string;
 }
@@ -20,6 +20,7 @@ const ApiContainer = (instance: AxiosInstance) => {
     }
     return config;
   });
+
   const getError = (error: AxiosError): NetworkError => {
     return {
       status: error.response?.status || 0,
@@ -27,6 +28,7 @@ const ApiContainer = (instance: AxiosInstance) => {
         error.response?.statusText || error.response?.data.message || null,
     };
   };
+
   const get = async <T = any>(
     url: string,
     option: AxiosRequestConfig = {}
@@ -41,6 +43,7 @@ const ApiContainer = (instance: AxiosInstance) => {
       throw getError(error as AxiosError);
     }
   };
+
   const post = async <T = any, D = any>(
     url: string,
     data?: D,
