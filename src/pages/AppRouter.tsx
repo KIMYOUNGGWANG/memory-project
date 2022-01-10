@@ -6,7 +6,7 @@ const AppRouter: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={SITEMAP.MAIN}>
+        <Route path={SITEMAP.PUBLIC.MAIN}>
           <Route index element={<Home />} />
         </Route>
       </Routes>

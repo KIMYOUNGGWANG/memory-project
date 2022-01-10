@@ -1,11 +1,13 @@
 type Id = string | number;
 export const SITEMAP = {
-  MAIN: "/",
-  TEMP: "tmp",
-  USER: {
-    INDEX: "user/",
-    TMP: "temppage",
-  },
+  PUBLIC:{
+    MAIN: "/",
+    TEMP: "tmp",
+    USER: {
+      INDEX: "user/",
+      TMP: "temppage",
+    },
+  }
 };
 export const SITEMAP_BY_ID = {
   ID_TMP: (id: Id) => `/cards/${id}`,
