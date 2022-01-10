@@ -12,10 +12,9 @@ const TEst11: React.FC = () => {
     },
     {
       enabled: false,
-    }
+    },
   );
-  console.log(data, isLoading);
-  return <>{data?.name || "default"}</>;
+  return <>123{data?.name || "default"}</>;
 };
 
 export default TEst11;

@@ -14,7 +14,7 @@ const boot = async () => {
         <App />
       </QueryClientProvider>
     </React.StrictMode>,
-    document.getElementById("root")
+    document.getElementById("root"),
   );
   reportWebVitals();
 };

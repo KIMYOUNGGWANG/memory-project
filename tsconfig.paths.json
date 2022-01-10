@@ -2,8 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "Views/*": ["src/components/views/*"],
-      "Views": ["src/components/views/index"],
+      "Shared/*": ["src/shared/*"],
+      "Pages/*": ["src/pages/*"],
       "Apis/*": ["src/apis/*"],
       "@/*": ["src/*"]
     }

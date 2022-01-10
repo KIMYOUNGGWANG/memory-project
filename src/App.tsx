@@ -1,16 +1,9 @@
 import React from "react";
-import { useQuery } from "react-query";
-import { HomeView } from "Views";
-function App() {
-  const { data, isLoading } = useQuery(["user", "test"], () => {}, {
-    enabled: false,
-  });
-  console.log(data, isLoading);
-  return (
-    <div className="App">
-      <HomeView />
-    </div>
-  );
-}
+import PublicRouter from "Pages/public";
+const App: React.FC = () => {
+  const isLogin = false;
+  if (isLogin) return <>로그인 중</>;
+  return <PublicRouter />;
+};
 
 export default App;
