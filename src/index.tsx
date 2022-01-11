@@ -11,11 +11,11 @@ const boot = async () => {
   await getInitialData(queryClient);
   ReactDOM.render(
     <React.StrictMode>
-      <GlobalThemeProvider>
-        <QueryClientProvider client={queryClient}>
+      <QueryClientProvider client={queryClient}>
+        <GlobalThemeProvider>
           <App />
-        </QueryClientProvider>
-      </GlobalThemeProvider>
+        </GlobalThemeProvider>
+      </QueryClientProvider>
     </React.StrictMode>,
     document.getElementById("root"),
   );

@@ -90,7 +90,7 @@ export const ColorList = {
   black600: "#5B5C5C",
   black700: "#434444",
   black800: "#2B2B2B",
-  black900: "#f6fcfc",
+  black900: "#0B0C0C",
 
   rainist500: "#109CD8",
   event500: "#3BCCC5",
